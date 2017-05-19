@@ -61,7 +61,7 @@ input[type="text"],input[type="password"],input[type="email"], textarea, select 
 html {
 	font-size: 100%;
 	font-family: 'Montserrat', sans-serif;
-	color: #333;
+	color: #777c88;
 }
 body {
 	font-size: 1rem;
@@ -109,12 +109,20 @@ text-decoration: none;
 
 .header {
   width: 900px;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
   display: flex;
   justify-content: space-between;
 }
 
 .app-name {
   display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
   justify-content: flex-start;
   padding: 0 20px;
 }
@@ -153,11 +161,19 @@ text-decoration: none;
 }
 
 .content-container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
   display: flex;
 	height: 800px;
 }
 
-.container{
+.container {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
   display: flex;
   justify-content: flex-start;
 }
@@ -182,50 +198,28 @@ text-decoration: none;
 
 .content-three {
   flex: 1;
-	height: auto;
+	height: 100%;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-.form-content {
+.form-content-item {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
   display: flex;
   justify-content: center;
+	padding: 20px;
 }
 
-.btn-add {
-  color: #fff;
-  background-color: #1abc9c;
-  border-color: #16a085;
-}
-
-.btn-add:hover {
-  color: #fff;
-  background-color: #16a085;
-  border-color: #16a085;
-}
-
-.btn-edit {
-  color: inherit;
-  background-color: #ecf0f1;
-  border-color: #bdc3c7;
-  margin: 0 10px 0 0;
-}
-
-.btn-edit:hover {
-  color: inherit;
-  background-color: #bdc3c7;
-  border-color: #bdc3c7;
-}
-
-.btn-delete {
-  color: inherit;
-  background-color: #ecf0f1;
-  border-color: #bdc3c7;
-  margin: 0 10px 0 0;
-}
-
-.btn-delete:hover {
-  color: inherit;
-  background-color: #bdc3c7;
-  border-color: #bdc3c7;
+.required {
+    color: red;
 }
 
 .btn {
@@ -237,12 +231,44 @@ text-decoration: none;
   touch-action: manipulation;
   cursor: pointer;
   border: 1px solid transparent;
-  padding: 6px 12px;
+  padding: 9px 20px;
   font-size: 14px;
   line-height: 1.42857143;
   border-radius: 3px;
   -moz-user-select: none;
   user-select: none;
+}
+
+.btn-add {
+  color: #fff;
+  background-color: #1abc9c;
+}
+
+.btn-add:hover {
+  color: #fff;
+  background-color: #16a085;
+}
+
+.btn-edit {
+  color: inherit;
+  background-color: #ecf0f1;
+  margin: 0 10px 0 0;
+}
+
+.btn-edit:hover {
+  color: inherit;
+  background-color: #bdc3c7;
+}
+
+.btn-delete {
+  color: inherit;
+  background-color: #ecf0f1;
+  margin: 0 10px 0 0;
+}
+
+.btn-delete:hover {
+  color: inherit;
+  background-color: #bdc3c7;
 }
 
 .icon-doc-new::before {
@@ -276,15 +302,28 @@ ul {
 	padding: 0px;
 }
 
-input[type="text"] {
-  background-color: rgba(255,255,255,0.15);
-  border: 1px solid #f2f2f2;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  font-size: 14px;
-  padding-left: 20px;
-  height: 40px;
-	margin: 5px;
-	border-radius: 4px;
+input {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  margin-top: 0;
+  border: 1px solid #e9eaec;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  outline: 0;
+  background: #f5f6f8;
+  padding: 6px 0 7px 10px;
+}
+
+textarea {
+  height: 180px;
+  margin: 0 0 21px 0;
+  border: 1px solid #e9eaec;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  outline: 0;
+  background: #f5f6f8;
+  -webkit-appearance: none;
+  padding: 6px 0 7px 10px;
 }
