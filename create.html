@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Noty</title>
+		<meta name="description" content="Noty - Alle Notizen auf einen Blick" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="js/create.js"></script>
+		<!--[if IE]>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<![endif]-->
+	</head>
+  <body>
+		<div class='header-container'>
+		  <div class='header'>
+		    <div class='app-name'>
+					<h1>Noty</h1>
+				</div>
+		  </div>
+		</div>
+		<div class='top-container'>
+		</div>
+		<div class='content-container'>
+		  <div class='content-item content-three'>
+				<div class="form-content">
+					<fieldset>
+						<form id="create">
+							<label for="title">Titel<i class="required">*</i>:</label>
+							<input type="text" name="title" id="title" required="" autofocus="">
+							<label for="description" class="search-wrap">Beschreibung:</label>
+							<textarea name="description" class="search-wrap"></textarea>
+							<button type="submit" id="header-add" class="header-add btn btn-add">
+								<span class="icon-doc-new">Notiz hinzufügen</span>
+							</button>
+				    </form>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>
