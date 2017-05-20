@@ -216,6 +216,8 @@ text-decoration: none;
   display: flex;
   justify-content: center;
 	padding: 20px;
+	flex-direction: column;
+	width: 80%;
 }
 
 .required {
@@ -224,7 +226,7 @@ text-decoration: none;
 
 .btn {
   display: inline-block;
-  margin-bottom: 0;
+  margin: 0 auto;
   font-weight: 400;
   text-align: center;
   vertical-align: middle;
@@ -237,6 +239,7 @@ text-decoration: none;
   border-radius: 3px;
   -moz-user-select: none;
   user-select: none;
+	width: 180px;
 }
 
 .btn-add {

@@ -9,7 +9,6 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="js/create.js"></script>
 		<!--[if IE]>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<![endif]-->
@@ -23,20 +22,28 @@
 		  </div>
 		</div>
 		<div class='top-container'>
-		</div>
-		<div class='content-container'>
-		  <div class='content-item content-three'>
-				<div class="form-content-item">
-					<label for="title">Titel<i class="required">*</i>:</label>
-					<input type="text" name="title" id="title" required="" autofocus="">
-					<label for="description">Beschreibung:</label>
-					<textarea name="description"></textarea>
-					<button onclick="send()" id="header-add" class="header-add btn btn-add">
-						<span class="icon-doc-new">Notiz hinzufügen</span>
-					</button>
-				</div>
+			<div class='top-item top-one'>
+				<a href="create.html" id="add-note" class="header-add btn btn-add">Neue Notiz</a>
+			</div>
+			<div class='top-item top-two'>
+				<button id="header-edit" class="header-edit btn btn-edit">
+					<span class="icon-doc-edit">Bearbeiten</span>
+				</button>
+				<button id="header-delete" class="header-delete btn btn-delete">
+					<span class="icon-doc-delete">Löschen</span>
+				</button>
 			</div>
 		</div>
-	</div>
+		<div class='content-container'>
+			<div class='content-item content-one'>
+				<label for="numberOfElements">Anzahl Elemente: </label>
+ 			 	<div id="numberOfElements"></div><br>
+ 			 	<label for="elements">Elemente: </label>
+ 			 	<div id="elements"></div>
+			</div>
+		  <div class='content-item content-two'>
+			</div>
+		</div>
+	<script src="js/app.js"></script>
  </body>
 </html>
