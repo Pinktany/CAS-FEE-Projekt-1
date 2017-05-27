@@ -1,6 +1,13 @@
-function send(){
-    var notes = JSON.parse(sessionStorage.getItem("notes"));
-    notes.push(document.getElementById("title").value);
-    sessionStorage.setItem("notes", JSON.stringify(notes));
-    window.location.replace("app.html");
-};
+function send() {
+
+	var title = document.getElementById("title").value;
+	var description = document.getElementById("description").value
+	sessionStorage.setItem(title, description);
+
+   window.location.replace("app.html");
+
+}
+
+(function() {
+    activateStyle(getDefaultStyle());
+})();
