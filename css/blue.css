@@ -106,7 +106,7 @@ text-decoration: none;
   color: inherit;
   padding: 20px 0;
   justify-content: center;
-  background-color: #9848a1;
+  background-color: #2980b9;
 }
 
 .header {
@@ -387,7 +387,7 @@ textarea {
 
 .styleswitcher {
     height: 40px;
-    max-width: 40%;
+		max-width: 40%;
     clear: both;
     padding: 0;
     margin: 0;
@@ -396,12 +396,12 @@ textarea {
     line-height: 22px;
     display: block;
     background-color: transparent;
-    color: #9848a1;
+    color: #2980b9;;
     text-transform: uppercase;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    border: 2px solid #9848a1;
+    border: 2px solid #2980b9;;
     box-sizing: border-box;
 }
 

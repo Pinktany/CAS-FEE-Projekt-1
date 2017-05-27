@@ -7,9 +7,8 @@
 		<meta name="description" content="Noty - Alle Notizen auf einen Blick" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="js/create.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" id="defaultstyle">
+		<link rel="alternate stylesheet" href="css/blue.css" type="text/css"  id="bluestyle">
 		<!--[if IE]>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<![endif]-->
@@ -18,25 +17,36 @@
 		<div class='header-container'>
 		  <div class='header'>
 		    <div class='app-name'>
-					<h1>Noty</h1>
+					<h3>Noty</h3>
 				</div>
 		  </div>
 		</div>
 		<div class='top-container'>
 		</div>
-		<div class='content-container'>
-		  <div class='content-item content-three'>
-				<div class="form-content-item">
-					<label for="title">Titel<i class="required">*</i>:</label>
-					<input type="text" name="title" id="title" required="" autofocus="">
-					<label for="description">Beschreibung:</label>
-					<textarea name="description"></textarea>
-					<button onclick="send()" id="header-add" class="header-add btn btn-add">
-						<span class="icon-doc-new">Notiz hinzufügen</span>
-					</button>
+		<div id="notesList">
+			<div class='content-container'>
+				<div class='content-item content-three'>
+					<div class="form-content-item">
+						<label for="title">Titel<i class="required">*</i>:</label>
+						<input type="text" name="title" id="title" required="required" autofocus="">
+						<label for="text">Beschreibung:</label>
+						<textarea name="text" id="description"></textarea>
+						<div class="buttonbar">
+							<div class="buttonbar-item">
+								<a href="app.html" id="cancel" class="header-delete btn btn-delete">Abbrechen</a>
+							</div>
+							<div class="buttonbar-item">
+								<button onclick="send()" id="header-add" class="header-add btn btn-add">
+									<span class="icon-doc-new">Notiz hinzufügen</span>
+								</button>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
- </body>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="js/create.js"></script>
+		<script src="js/styleswitcher.js"></script>
+	</body>
 </html>

@@ -7,43 +7,65 @@
 		<meta name="description" content="Noty - Alle Notizen auf einen Blick" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css" id="defaultstyle">
+		<link rel="alternate stylesheet" href="css/blue.css" type="text/css"  id="bluestyle">
 		<!--[if IE]>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<![endif]-->
 	</head>
-  <body>
+  <body onload="doShowAll()">
 		<div class='header-container'>
 		  <div class='header'>
 		    <div class='app-name'>
-					<h1>Noty</h1>
+					<h3>Noty</h3>
 				</div>
 		  </div>
 		</div>
 		<div class='top-container'>
-			<div class='top-item top-one'>
-				<a href="create.html" id="add-note" class="header-add btn btn-add">Neue Notiz</a>
+			<div class='top-item top-left'>
+				<div class="my-notes">
+					<label for="notes">Meine Notizen </label>
+				</div>
+				<div class="add-notes">
+					<a href="create.html" id="add-note" class="header-add btn btn-add">Neue Notiz</a>
+				</div>
 			</div>
-			<div class='top-item top-two'>
-				<button id="header-edit" class="header-edit btn btn-edit">
-					<span class="icon-doc-edit">Bearbeiten</span>
-				</button>
-				<button id="header-delete" class="header-delete btn btn-delete">
-					<span class="icon-doc-delete">Löschen</span>
-				</button>
+			<div class='top-item top-right'>
+				<div class="edit">
+					<button id="header-edit" class="header-edit btn btn-edit">
+						<span class="icon-doc-edit">Bearbeiten</span>
+					</button>
+					<button id="header-delete" class="header-delete btn btn-delete">
+						<span class="icon-doc-delete">Löschen</span>
+					</button>
+				</div>
+				<div class="styleswitcher">
+					<span>Style wählen:</span>
+						<select id="styleswitcher">
+							<option value="css/style.css">Lila</option>
+							<option value="css/blue.css">Blue</option>
+						</select>
+					</label>
+      	</div>
 			</div>
 		</div>
 		<div class='content-container'>
-			<div class='content-item content-one'>
-				<label for="numberOfElements">Anzahl Elemente: </label>
- 			 	<div id="numberOfElements"></div><br>
- 			 	<label for="elements">Elemente: </label>
- 			 	<div id="elements"></div>
+			<div class='content-item content-left'>
+				<div class="info">
+					<label for="numberOfElements"></label>
+	 			 	<div id="numberOfElements"></div><br>
+				</div>
+				<div class="sort">
+				</div>
+				<div id="notes-list">
+				</div>
 			</div>
-		  <div class='content-item content-two'>
+		  <div class='content-item content-right'>
+				<div id="description"></div>
 			</div>
 		</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="js/app.js"></script>
+	<script src="js/styleswitcher.js"></script>
  </body>
 </html>
