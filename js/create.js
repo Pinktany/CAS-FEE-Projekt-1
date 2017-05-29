@@ -1,13 +1,20 @@
-function send() {
+function send(){
 
-	var title = document.getElementById("title").value;
-	var description = document.getElementById("description").value
-	sessionStorage.setItem(title, description);
+  var addNotes = function (title, description) {
+  	var oldNotes = JSON.parse(sessionStorage.getItem('notesArray')) || [];
+		var newNotes = {
+    	'title': document.getElementById("title").value,
+      'description': document.getElementById("description").value
+    };
+  oldNotes.push(newNotes);
+	sessionStorage.setItem('notesArray', JSON.stringify(oldNotes));
+	};
 
-   window.location.replace("app.html");
-
+  addNotes('title', 'description');
+  window.location.replace("app.html");
 }
 
+//Styleswitcher
 (function() {
     activateStyle(getDefaultStyle());
 })();

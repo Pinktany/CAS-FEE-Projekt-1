@@ -1,35 +1,33 @@
-function doShowAll() {
-	if (CheckBrowser()) {
-		var key = "";
-		var list = "";
-		for (var i = 0; i <= sessionStorage.length - 1; i++) {
-			key = sessionStorage.key(i);
-			list += "<div class='note-item'><p>" + key + "</p>\n<p>"
-					+ sessionStorage.getItem(key) + "</p></div>\n";
-		}
-		if (list == "") {
-			list += "<div><p><i>Keine Notizen</i></p>";
-		}
-		document.getElementById('notes-list').innerHTML = list;
-	} else {
-		alert('Notiz konnte nicht gespeichert werden.');
-	}
-}
+// Add new note to session Storage
+var notes = sessionStorage.getItem("notesArray");
+if( !notes )
+{
+    sessionStorage.setItem("notesArray", JSON.stringify([]));
+    notes = sessionStorage.getItem("notesArray");
+};
+notes = JSON.parse(notes);
 
-function CheckBrowser() {
-	if ('sessionStorage' in window && window['sessionStorage'] !== null) {
-		// we can use sessionStorage object to store data
-		return true;
-	} else {
-			return false;
-	}
-}
+
+// Count Notes Elements
+document.getElementById("numberOfElements").innerText = "Elemente: " + notes.length;
+
+
+// Add new note to div
+if( notes.length == 0 ) {
+  document.getElementById("notes").innerHTML =  "Keine Notizen";
+} else {
+    var key = "";
+    var list = "";
+    for (var i = 0; i <= notes.length - 1; i++) {
+  	   value = notes[i];
+       list += "<div class='note-item'><p>" + value['title'] + "</p>\n<p>" + 	value['description'] + "</p></div>\n";
+		}
+    document.getElementById("notes").innerHTML = list;
+  }
+
 
 // Make Notes Div clickable
-
-$(document).ready(function () {
-    $('.note-item').click(function () {
-        $('.note-item').removeClass('active');
-        $(this).addClass('active');
-    });
+$('.note-item').on('click', function() {
+  $('.note-item').removeClass('active');
+  $(this).addClass('active');
 });
