@@ -7,16 +7,16 @@
 		<meta name="description" content="Noty - Alle Notizen auf einen Blick" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" id="defaultstyle">
+    	<link rel="stylesheet" type="text/css" href="css/style.css" id="defaultstyle">
 		<link rel="alternate stylesheet" href="css/blue.css" type="text/css"  id="bluestyle">
 		<!--[if IE]>
 			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<![endif]-->
 	</head>
-  <body>
+  	<body>
 		<div class='header-container'>
-		  <div class='header'>
-		    <div class='app-name'>
+		  	<div class='header'>
+		    	<div class='app-name'>
 					<h3>Noty</h3>
 				</div>
 		  </div>
@@ -27,10 +27,12 @@
 			<div class='content-container'>
 				<div class='content-item content-three'>
 					<div class="form-content-item">
-						<label for="title">Titel<i class="required">*</i>:</label>
-						<input type="text" name="title" id="title" required="required" autofocus="">
-						<label for="text">Beschreibung:</label>
+						<label for="title">Titel<i class="required">*</i></label>
+						<input type="text" name="title" id="title" required autofocus="">
+						<label for="text">Beschreibung</label>
 						<textarea name="text" id="description"></textarea>
+						<label for="dueDate" class="">Fälligkeitsdatum<i class="required">*</i></label>
+						<input type="date" name="dueDate" id="dueDate" required>
 						<div class="buttonbar">
 							<div class="buttonbar-item">
 								<a href="app.html" id="cancel" class="header-delete btn btn-delete">Abbrechen</a>
@@ -47,6 +49,7 @@
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="js/create.js"></script>
+		<script src="libs/moment.js"></script>
 		<script src="js/styleswitcher.js"></script>
 	</body>
 </html>

@@ -1,71 +1,1 @@
-<!DOCTYPE html>
-<html lang="de">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Noty</title>
-		<meta name="description" content="Noty - Alle Notizen auf einen Blick" />
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css" id="defaultstyle">
-		<link rel="alternate stylesheet" href="css/blue.css" type="text/css"  id="bluestyle">
-		<!--[if IE]>
-			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<![endif]-->
-	</head>
-  <body>
-		<div class='header-container'>
-		  <div class='header'>
-		    <div class='app-name'>
-					<h3>Noty</h3>
-				</div>
-		  </div>
-		</div>
-		<div class='top-container'>
-			<div class='top-item top-left'>
-				<div class="my-notes">
-					<label for="notes">Meine Notizen </label>
-				</div>
-				<div class="add-notes">
-					<a href="create.html" id="add-note" class="header-add btn btn-add">Neue Notiz</a>
-				</div>
-			</div>
-			<div class='top-item top-right'>
-				<div class="edit">
-					<button id="header-edit" class="header-edit btn btn-edit">
-						<span class="icon-doc-edit">Bearbeiten</span>
-					</button>
-					<button id="header-delete" class="header-delete btn btn-delete">
-						<span class="icon-doc-delete">Löschen</span>
-					</button>
-				</div>
-				<div class="styleswitcher">
-					<span>Style wählen:</span>
-						<select id="styleswitcher">
-							<option value="css/style.css">Lila</option>
-							<option value="css/blue.css">Blue</option>
-						</select>
-					</label>
-      	</div>
-			</div>
-		</div>
-		<div class='content-container'>
-			<div class='content-item content-left'>
-				<div class="info">
-					<label for="numberOfElements"></label>
-	 			 	<div id="numberOfElements"></div><br>
-				</div>
-				<div class="sort">
-				</div>
-				<div id="notes">
-				</div>
-			</div>
-		  <div class='content-item content-right'>
-				<div id="description"></div>
-			</div>
-		</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="js/app.js"></script>
-	<script src="js/styleswitcher.js"></script>
- </body>
-</html>
+<!DOCTYPE html><html lang="de">	<head>		<meta charset="utf-8">		<meta http-equiv="X-UA-Compatible" content="IE=edge">		<title>Noty</title>		<meta name="description" content="Noty - Alle Notizen auf einen Blick" />		<meta name="viewport" content="width=device-width,initial-scale=1.0">		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    	<link rel="stylesheet" type="text/css" href="css/style.css" id="defaultstyle">		<link rel="alternate stylesheet" href="css/blue.css" type="text/css" id="bluestyle">		<!--[if IE]>			<meta http-equiv="X-UA-Compatible" content="IE=edge" />		<![endif]-->	</head>	<body>		<div class='header-container'>		  	<div class='header'>		    	<div class='app-name'>					<h3>Noty</h3>				</div>		  	</div>		</div>		<div class='top-container'>			<div class='top-item top-left'>				<div class="my-notes">					<label for="notes">Meine Notizen </label>				</div>				<div class="add-notes">					<a href="create.html" id="add-note" class="header-add btn btn-add">Neue Notiz</a>				</div>			</div>			<div class='top-item top-right'>				<div class="edit">					<button id="header-edit" class="header-edit btn btn-edit">						<span class="icon-doc-edit">Bearbeiten</span>					</button>					<button id="header-delete" class="header-delete btn btn-delete" onclick="deleteNote">						<span class="icon-doc-delete">Löschen</span>					</button>				</div>				<div class="styleswitcher">					<span>Style wählen:</span>						<select id="styleswitcher">							<option value="css/style.css">Lila</option>							<option value="css/blue.css">Blue</option>						</select>      			</div>			</div>		</div>		<div class='content-container'>			<div class='content-item content-left'>				<div class="info">					<div class="countElements">						<label for="numberOfElements"></label>		 			 	<div id="numberOfElements"></div><br>					</div>					<div class="sortOrder">						<span>Sortieren nach:</span>						<select id="sortOrder">							<option value="sortByCreationDate">Estellungsdatum</option>							<option value="sortByDueDate">Fälligkeitsdatum</option>							<option value="sortByImportance">Wichtigkeit</option>						</select>					</div>				</div>				<div id="notes">				</div>			</div>		  <div class='content-item content-right'>				<div id="description"></div>		  </div>		</div>	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>	<script src="js/app.js"></script>	<script src="libs/moment.js"></script>	<script src="js/styleswitcher.js"></script> 	</body></html>

@@ -1,13 +1,13 @@
 
-var styleSwitcher = document.getElementById("styleswitcher");
-var defaultStyle = getDefaultStyle();
+let styleSwitcher = document.getElementById("styleswitcher");
+let defaultStyle = getDefaultStyle();
 $("#styleswitcher").val(defaultStyle);
 activateStyle(defaultStyle);
 styleSwitcher.addEventListener('change', onStyleChanged);
 
 
 function onStyleChanged() {
-    var selectedStyle = $("#styleswitcher").val();
+    let selectedStyle = $("#styleswitcher").val();
     activateStyle(selectedStyle);
     setDefaultStyle(selectedStyle);
 }
@@ -21,10 +21,10 @@ function setDefaultStyle(style) {
 }
 
 function getDefaultStyle() {
-    var defaultStyle = localStorage.getItem('defaultStyle');
+    let defaultStyle = localStorage.getItem('defaultStyle');
     if (!defaultStyle) {
         localStorage.setItem('defaultStyle', 'css/style.css');
         defaultStyle = localStorage.getItem('defaultStyle');
     }
     return defaultStyle;
-};
+}
