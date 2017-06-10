@@ -31,6 +31,14 @@ $(function () {
         }
         displayNotes();
     });
+
+    //Delete Note item
+    $(".note-item").on('click', '.btn-delete', function(e){
+        var item = this;
+        deleteNoteItem(e, item);
+        notes.splice(notes, 1);
+        sessionStorage.setItem("notes", JSON.stringify(notes));
+    });
 });
 
 //Sort functions
@@ -59,9 +67,3 @@ function deleteNoteItem(e, item) {
     e.preventDefault();
     $(item).closest("div.note-item").remove();
 }
-
-//Delete Note item
-$(".note-item").on('click', '.btn-delete', function(e){
-    var item = this;
-    deleteNoteItem(e, item)
-});
