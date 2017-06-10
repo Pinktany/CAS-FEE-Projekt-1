@@ -1,10 +1,17 @@
+function getDefaultStyle() {
+    let defaultStyle = localStorage.getItem('defaultStyle');
+    if (!defaultStyle) {
+        localStorage.setItem('defaultStyle', 'css/lila-mist.css');
+        defaultStyle = localStorage.getItem('defaultStyle');
+    }
+    return defaultStyle;
+}
 
 let styleSwitcher = document.getElementById("styleswitcher");
 let defaultStyle = getDefaultStyle();
 $("#styleswitcher").val(defaultStyle);
 activateStyle(defaultStyle);
 styleSwitcher.addEventListener('change', onStyleChanged);
-
 
 function onStyleChanged() {
     let selectedStyle = $("#styleswitcher").val();
@@ -18,13 +25,4 @@ function activateStyle(style) {
 
 function setDefaultStyle(style) {
     localStorage.setItem('defaultStyle', style);
-}
-
-function getDefaultStyle() {
-    let defaultStyle = localStorage.getItem('defaultStyle');
-    if (!defaultStyle) {
-        localStorage.setItem('defaultStyle', 'css/style.css');
-        defaultStyle = localStorage.getItem('defaultStyle');
-    }
-    return defaultStyle;
 }

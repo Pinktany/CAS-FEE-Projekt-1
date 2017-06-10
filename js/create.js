@@ -1,15 +1,10 @@
 function send() {
 
-    let addNotes = function (title, description, dueDate) {
+    let addNote = function (title, description, dueDate) {
 
-      //Todo - Check if input is valid
-       //if (document.getElementById("title").value === "" || document.getElementById("duedate").value === "") {
-       //    console.log("Please enter a valid input.");
-       //    return false;
-       //}
-        let oldNotes = JSON.parse(sessionStorage.getItem('notesArray')) || [];
+        let notes = JSON.parse(sessionStorage.getItem('notes')) || [];
         let creationDate = moment().format('YYYY-MM-DD');
-        let newNotes = {
+        let newNote = {
             'title': document.getElementById("title").value,
             'description': document.getElementById("description").value,
             'dueDate': document.getElementById("dueDate").value,
@@ -17,11 +12,11 @@ function send() {
     };
 
 
-    oldNotes.push(newNotes);
-    sessionStorage.setItem('notesArray', JSON.stringify(oldNotes));
+    notes.push(newNote);
+    sessionStorage.setItem('notes', JSON.stringify(notes));
     };
 
-    addNotes('title', 'description', 'dueDate', 'creationDate');
+    addNote('title', 'description', 'dueDate', 'creationDate');
     window.location.replace("app.html");
 }
 
