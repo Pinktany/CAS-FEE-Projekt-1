@@ -1,6 +1,6 @@
 function send() {
 
-    let addNote = function (title, description, dueDate) {
+    let addNote = function (title, description, dueDate, importance) {
 
         let notes = JSON.parse(sessionStorage.getItem('notes')) || [];
         let creationDate = moment().format('YYYY-MM-DD');
@@ -8,7 +8,8 @@ function send() {
             'title': document.getElementById("title").value,
             'description': document.getElementById("description").value,
             'dueDate': document.getElementById("dueDate").value,
-            'creationDate': creationDate
+            'creationDate': creationDate,
+            'importance': document.querySelector('input[name="importance"]:checked').value
     };
 
 
@@ -16,7 +17,7 @@ function send() {
     sessionStorage.setItem('notes', JSON.stringify(notes));
     };
 
-    addNote('title', 'description', 'dueDate', 'creationDate');
+    addNote('title', 'description', 'dueDate', 'creationDate', 'importance');
     window.location.replace("app.html");
 }
 

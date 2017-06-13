@@ -67,3 +67,36 @@ function deleteNoteItem(e, item) {
     e.preventDefault();
     $(item).closest("div.note-item").remove();
 }
+
+function deleteNote(noteId) {
+    let notesContainer = getAllNotes();
+    noteId = parseInt(noteId);
+    for (let index = 0; index < notesContainer.notes.length; index++) {
+        if (notesContainer.notes[index].id === noteId) {
+            notesContainer.notes.splice(index, 1);
+            localStorage.setItem('notes', JSON.stringify(notesContainer));
+            break;
+        }
+    }
+    reloadNotes();
+}
+
+//Importance
+$(document).ready(function () {
+    $('.star').click(function () {
+        let b = 0;
+        let c = 0;
+        $('input[name="importance"]:checked').each(function () {
+            b = parseInt($(this).val(), 10);
+            let testobj = ('$(this)', b);
+            c = sessionStorage.setItem('testobj', testobj);
+        });
+        alert(b);
+        let a1 = sessionStorage.getItem('testobj');
+        alert(a1);
+
+    });
+
+});
+
+
