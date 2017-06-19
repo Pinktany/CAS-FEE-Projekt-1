@@ -535,3 +535,7 @@ label.star:before {
 	content: '\f005';
 	font-family: FontAwesome;
 }
+
+.uniqId {
+	display: none;
+}

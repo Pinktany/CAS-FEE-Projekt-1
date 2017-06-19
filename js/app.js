@@ -1,9 +1,11 @@
+"use strict";
+
 //Notes
-let notes = sessionStorage.getItem("notes");
+let notes = localStorage.getItem("notes");
 
 if( !notes ) {
-    sessionStorage.setItem("notes", JSON.stringify([]));
-    notes = sessionStorage.getItem("notes");
+    localStorage.setItem("notes", JSON.stringify([]));
+    notes = localStorage.getItem("notes");
 }
 notes = JSON.parse(notes);
 
@@ -29,15 +31,19 @@ $(function () {
         } else if ( 'sortByCreationDate' === $( this ).attr('id')){
             notes.sort(sortFunctions.sortByCreationDate );
         }
+          else if ( 'sortByImportance' === $( this ).attr('id')){
+            notes.sort(sortFunctions.sortByImportance );
+            notes.reverse()
+        }
         displayNotes();
     });
 
     //Delete Note item
     $(".note-item").on('click', '.btn-delete', function(e){
-        var item = this;
+        let item = this;
         deleteNoteItem(e, item);
-        notes.splice(notes, 1);
-        sessionStorage.setItem("notes", JSON.stringify(notes));
+        notes.splice(index, 1);
+        localStorage.setItem("notes", JSON.stringify(notes));
     });
 });
 
@@ -52,6 +58,11 @@ let sortFunctions = {
         let creationDate1 = new Date(a.creationDate),
             creationDate2 = new Date(b.creationDate);
         return creationDate1 - creationDate2;
+    },
+    'sortByImportance' : function(a, b) {
+        let importance1 = new Date(a.importance),
+            importance2 = new Date(b.importance);
+        return importance1 - importance2;
     }
 };
 
@@ -67,36 +78,3 @@ function deleteNoteItem(e, item) {
     e.preventDefault();
     $(item).closest("div.note-item").remove();
 }
-
-function deleteNote(noteId) {
-    let notesContainer = getAllNotes();
-    noteId = parseInt(noteId);
-    for (let index = 0; index < notesContainer.notes.length; index++) {
-        if (notesContainer.notes[index].id === noteId) {
-            notesContainer.notes.splice(index, 1);
-            localStorage.setItem('notes', JSON.stringify(notesContainer));
-            break;
-        }
-    }
-    reloadNotes();
-}
-
-//Importance
-$(document).ready(function () {
-    $('.star').click(function () {
-        let b = 0;
-        let c = 0;
-        $('input[name="importance"]:checked').each(function () {
-            b = parseInt($(this).val(), 10);
-            let testobj = ('$(this)', b);
-            c = sessionStorage.setItem('testobj', testobj);
-        });
-        alert(b);
-        let a1 = sessionStorage.getItem('testobj');
-        alert(a1);
-
-    });
-
-});
-
-
