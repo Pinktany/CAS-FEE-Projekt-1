@@ -46,10 +46,13 @@ img {
 }
 
 input[type="text"],input[type="password"],input[type="email"], textarea, select {
+	background-color: #fff;
+	border: 1px solid #e9eaec;
 	box-sizing: border-box;
-	font: inherit;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
+	font: inherit;
+	height: 60px;
 	width: 100%;
 }
 
@@ -105,7 +108,7 @@ p {
 }
 
 a {
-	color: #fa3;
+	color: inherit;
 	text-decoration: none;
 }
 
@@ -165,6 +168,7 @@ input {
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	font-size: 16px;
+	height: 45px;
 	margin: 0 0 20px 0;
 	outline: 0;
 	padding: 6px 0 7px 10px;
@@ -195,6 +199,10 @@ textarea {
 
 .logo {
 	width: 80%;
+}
+
+.title {
+	padding: 0 0 50px 0;
 }
 
 .app-name {
@@ -376,6 +384,18 @@ textarea {
 	color: #2980b9;
 }
 
+.btn-update {
+	background-color: #2980b9;
+	color: #fff;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.btn-update:hover {
+	background-color: #206694;
+	color: #fff;
+}
+
 .btn-edit,
 .btn-delete {
 	background-color: transparent;
@@ -533,4 +553,8 @@ label.star:hover {
 label.star:before {
 	content: '\f005';
 	font-family: FontAwesome;
+}
+
+.uniqId {
+	display: none;
 }

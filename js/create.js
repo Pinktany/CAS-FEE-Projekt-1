@@ -2,7 +2,7 @@
 
 function send() {
 
-    notesContainer.addNewNote($("#title").val(), $("#description").val(), $("#dueDate").val(), $("#creationDate").val());
+    notesContainer.addNewNote($("#title").val(), $("#description").val(), $("#dueDate").val(), $("#creationDate").val(), $("#importance").val());
     window.location.replace("app.html");
 }
 
@@ -17,7 +17,7 @@ let notesContainer = (function() {
             'description': description,
             'dueDate': dueDate,
             'creationDate': creationDate,
-            'importance': $("input[name='importance']:checked").val(),
+            'importance': $('select[name=importance]').val(),
             'id': Math.floor(Math.random() * 10000)
         };
 
