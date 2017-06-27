@@ -5,6 +5,7 @@ if( !notes )
     localStorage.setItem("notes", JSON.stringify([]));
     notes = localStorage.getItem("notes");
 }
+
 notes = JSON.parse(notes);
 console.log(notes);
 
@@ -19,7 +20,6 @@ if (window.location.hash) {
     $('#dueDate').val(notes[index].dueDate);
     $('#importance').val(notes[index].importance);
 }
-
 
 //Update Note
 $( ".update" ).click(function() {

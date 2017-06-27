@@ -223,7 +223,7 @@ textarea {
   	font-size: 2rem;
 }
 
-.styleswitcher,
+.styleSwitcher,
 .changeStyle {
 	background-color: transparent;
 	border: 2px solid #fff;
@@ -241,7 +241,7 @@ textarea {
 	width: 20%;
 }
 
-.styleswitcher select,
+.styleSwitcher select,
 .changeStyle select {
 	border: none;
 	cursor: pointer;
@@ -255,7 +255,7 @@ textarea {
 	z-index: 1;
 }
 
-.styleswitcher span,
+.styleSwitcher span,
 .changeStyle span {
 	box-sizing: border-box;
 	float: left;
@@ -270,7 +270,7 @@ textarea {
 	width: 100%;
 }
 
-.styleswitcher::after,
+.styleSwitcher::after,
 .changeStyle::after {
 	content: "\f107";
 	display: block;
@@ -412,13 +412,13 @@ textarea {
 	vertical-align: middle;
 }
 
-.icon-doc-edit::before {
+.icon-note-edit::before {
   	content: '\f040';
   	font-family: "FontAwesome";
   	margin: 5px;
 }
 
-.icon-doc-delete::before {
+.icon-note-delete::before {
   	content: '\f1f8';
   	font-family: FontAwesome;
   	margin-right: 5px;
@@ -438,14 +438,18 @@ textarea {
 	width: 100%;
 }
 
-.note-text {
-	width: 80%;
+.note-action {
+	width: 5%;
 }
 
-.note-dates {
+.note-content {
+	width: 55%;
+}
+
+.note-meta {
 	font-size: 14px;
 	text-align: right;
-	width: 20%;
+	width: 40%;
 }
 
 .note-properties {

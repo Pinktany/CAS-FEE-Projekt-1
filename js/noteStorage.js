@@ -1,7 +1,8 @@
 "use strict";
 
-(function(noty) {
-//Notes
+let noteStorage = (function () {
+
+    //Notes
     let notes = localStorage.getItem("notes");
 
     if (!notes) {
@@ -11,14 +12,24 @@
     notes = JSON.parse(notes);
 
 
-// Delete note item
+
+    //Delete note item
     function deleteNoteItem(id) {
         let index = notes.indexOf(notes.filter(x => x.id === id)[0]);
         if (index > -1) {
             notes.splice(index, 1);
             localStorage.setItem("notes", JSON.stringify(notes));
         }
-    };
+    }
+
+    //Complete note item
+    function completeNoteItem(id) {
+        let index = notes.indexOf(notes.filter(x => x.id === id)[0]);
+        if (index > -1) {
+            notes.splice(index, 1);
+            localStorage.setItem("notes", JSON.stringify(notes));
+        }
+    }
 
     //Sort functions
     let sortFunctions = {
@@ -39,13 +50,22 @@
         }
     };
 
+    //Sort algo
     function sortBy(sortAlg) {
         notes.sort(sortFunctions[sortAlg]);
     }
 
-    noty.noteStorage = {
+    //Show completed note items
+    function showCompleted() {
+        showCompletedNoteItems();
+    }
+
+    return{
         notes,
         sortBy,
-        deleteNoteItem
+        showCompleted,
+        deleteNoteItem,
+        completeNoteItem,
+        showCompleted
     };
-})(window.noty = window.noty || { });
+}());

@@ -1,11 +1,5 @@
 "use strict";
 
-function send() {
-
-    notesContainer.addNewNote($("#title").val(), $("#description").val(), $("#dueDate").val(), $("#creationDate").val(), $("#importance").val());
-    window.location.replace("app.html");
-}
-
 let notesContainer = (function() {
    let notes = [];
    function addNewNote(title, description, dueDate, importance) {
@@ -30,6 +24,11 @@ let notesContainer = (function() {
        addNewNote: addNewNote
    }
 })();
+
+$('#saveNote' ).click(function() {
+    notesContainer.addNewNote($("#title").val(), $("#description").val(), $("#dueDate").val(), $("#creationDate").val(), $("#importance").val());
+    window.location.replace("app.html");
+});
 
 //Styleswitcher
 function getDefaultStyle() {

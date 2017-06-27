@@ -1,34 +1,35 @@
-//Hanldebars note template
 $(function () {
-    function displayNotes() {
-
-        let templateScript = $("#note-item").html();
-        let handlebarTemplate = Handlebars.compile(templateScript);
-        let context = {
-            notes: noty.noteStorage.notes
-        };
-        let compiledHtml = handlebarTemplate(context);
-        $('.notes-container').html(compiledHtml);
-    }
-    displayNotes();
+    "use strict";
 
     //Sort Order while change li element
-    $( ".sortOrder li" ).click(function() {
-        noty.noteStorage.sortBy($( this ).attr('id'));
+    $('.sortOrder li' ).click(function() {
+        noteStorage.sortBy($( this ).attr('id'));
         displayNotes();
     });
 
     //Delete Note item
-    $(".note-item").on('click', '.btn-delete', (event) => {
-        noty.noteStorage.deleteNoteItem($(event.currentTarget).data("noteid"));
+    $('.note-item').on('click', '.btn-delete', (event) => {
+        noteStorage.deleteNoteItem($(event.currentTarget).data('noteid'));
         displayNotes();
     });
 
-});
+    //Complete note item
+    $(document).on('click', '.finished', (event) => {
+        noteStorage.completeNoteItem($(event.currentTarget).data('noteid'));
+        displayNotes()
+    });
 
-//Style changer
-function onStyleChanged() {
-    let selectedStyle = $("#styleswitcher").val();
-    activateStyle(selectedStyle);
-    setActiveStyle(selectedStyle);
-};
+    //Show completed note items
+    $(document).on('click', '#showFinished', (event) => {
+        noteStorage.showCompleted($(event.currentTarget).data('noteid'));
+        displayNotes();
+    });
+
+    //Style changer
+    function onStyleChanged() {
+        let selectedStyle = $('#styleSwitcher').val();
+        activateStyle(selectedStyle);
+        setActiveStyle(selectedStyle);
+    };
+
+});
