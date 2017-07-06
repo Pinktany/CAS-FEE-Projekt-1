@@ -14,7 +14,7 @@
         let filter = false;
 
         function displayNotes() {
-            rest.getAllNotes(orderBy).then((notes) => {
+            rest.getAllNotes(orderBy, undefined, filter ? "finished" : "").then((notes) => {
                 const context = {
                         notes: notes ,
                     },
@@ -34,11 +34,13 @@
         $(document).on("click", ".finished",function () {
             note_id = $(this).parents(".note-item").attr("id");
             finishNote(note_id);
+            displayNotes();
         });
 
         //Show finished note items
-        $(document).on('click', '#showFinished', () => {
-            rest.showFinished()
+        $(document).on('click', '#showFinished', (event) => {
+            filter = !filter;
+            displayNotes();
         });
 
         //Delete note item

@@ -53,10 +53,14 @@
         <script id="note-item" type="text/x-handlebars-template">
             <div id="notes">
                 {{#notes}}
-                <div class="note-item" id="{{note_id}}">
+                <div class="note-item" id="{{this._id}}">
                     <div class="note-infos">
                         <div class="note-action">
-                            <input class="finished" type="checkbox" data-noteid="{{this.id}}">
+                            {{#if this.finished}}
+                            <input class="finished {{this._finished}}" type="checkbox" value={{this.finished}} checked>
+                            {{else}}
+                            <input class="finished {{this._finished}}" type="checkbox" value={{this.finished}}>
+                            {{/if}}
                         </div>
                         <div class="note-content">
                             <h4>{{this.title}}</h4>
