@@ -14,15 +14,14 @@
         $("#importance").val(notes[index].importance);
     }
 
-    //Update note
-    $(".update").click(function() {
-        updateNote();
+    //Edit note item
+    $(document).on("click", ".btn_edit", function () {
+        editNote(note_id);
     });
 
-    //Update note
-    function updateNote() {
-        notes.updateNote($("#title").val(), $("#description").val(), $("#dueDate").val(), $("#creationDate").val(), $("#importance").val());
-        window.location.replace("index.html");
+    //Edit note item
+    function editNote() {
+        rest.editNote($("#title").val(), $("#description").val(), $("#importance").val(), $("#dueDate").val());
     }
 
     //Save note
