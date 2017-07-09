@@ -5,31 +5,31 @@
 
     if (window.location.hash) {
 
-        const id = window.location.hash.substr(1);
-        const index = notes.findIndex(x => x.id === id);
+        let id = 0;
+        const note = rest.getNoteById(window.location.hash.substr(1)).done(function (note) {
+            $("#title").val(note.title);
+            $("#description").val(note.description);
+            $("#dueDate").val(note.dueDate);
+            $("#importance").val(note.importance);
+        });
 
-        $("#title").val(notes[index].title);
-        $("#description").val(notes[index].description);
-        $("#dueDate").val(notes[index].dueDate);
-        $("#importance").val(notes[index].importance);
+        //Edit note item
+        $(document).on("click", ".btn_edit", function () {
+            editNote();
+        });
+
+        //Save note
+        $("#saveNote").click(function() {
+            if (id === 0) {
+                rest.addNote(note).then(() =>{
+                    window.location.replace("index.html");
+                });
+            } else {
+                rest.editNote(note);
+            }
+
+        });
     }
-
-    //Edit note item
-    $(document).on("click", ".btn_edit", function () {
-        editNote(note_id);
-    });
-
-    //Edit note item
-    function editNote() {
-        rest.editNote($("#title").val(), $("#description").val(), $("#importance").val(), $("#dueDate").val());
-    }
-
-    //Save note
-    $("#saveNote").click(function() {
-        rest.addNote($("#title").val(), $("#description").val(), $("#importance").val(), $("#dueDate").val()).then(() =>{
-            window.location.replace("index.html");
-        } );
-    });
 
     //Styleswitcher
     function getDefaultStyle() {
