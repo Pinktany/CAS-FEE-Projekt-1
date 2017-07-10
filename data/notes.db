@@ -1,3 +1,3 @@
-{"title":"test1","description":"asdfasdf1","importance":"4","dueDate":"2017-07-21","creationDate":"2017-07-05","finished":true,"finished_on":1499366310580,"id":9596,"_id":"GIkbrZHNoUNLpWtb"}
-{"title":"test2","description":"asfadsf2","importance":"2","dueDate":"2017-07-19","creationDate":"2017-07-05","finished":false,"finished_on":false,"id":3945,"_id":"LRoYXMvKygMJ0BFj"}
-{"title":"test3","description":"asdfasdf3","importance":"3","dueDate":"2017-08-19","creationDate":"2017-07-05","finished":false,"finished_on":false,"id":1758,"_id":"WnHUvNgfvdcz7cGQ"}
+{"title":"Packen für Ferien","description":"Sonnenbrille, Kleider, ...","importance":"1","dueDate":"2017-07-10","creationDate":"2017-07-10","finished":true,"finished_on":1499675997379,"id":1493,"_id":"9kgi3fg4ea3J92R7"}
+{"title":"Aufräumen","description":"Wohnzimmer, Büro, Schlafzimmer","importance":"4","dueDate":"2017-07-14","creationDate":"2017-07-10","finished":false,"finished_on":false,"id":2399,"_id":"Dz6E3Md1Y7xMor1I"}
+{"title":"Einkaufen","description":"Butter, Milch, Eier","importance":"3","dueDate":"2017-07-15","creationDate":"2017-07-10","finished":false,"finished_on":false,"id":1135,"_id":"pw8QXjY9wUMCw6Nw"}

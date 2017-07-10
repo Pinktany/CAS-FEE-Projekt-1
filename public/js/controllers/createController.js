@@ -22,12 +22,10 @@
     //Save note
     $("#saveNote").click(function() {
         if (id === 0) {
-            console.log('save');
             rest.addNote($("#title").val(), $("#description").val(), $("#importance").val(), $("#dueDate").val()).then(() =>{
                 window.location.replace("index.html");
             })
         } else {
-            console.log('edit');
             rest.editNote(id, $("#title").val(), $("#description").val(), $("#importance").val(), $("#dueDate").val());
                 window.location.replace("index.html");
         }

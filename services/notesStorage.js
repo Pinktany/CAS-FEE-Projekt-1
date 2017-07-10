@@ -26,11 +26,14 @@ function addNote(title, description, importance, dueDate, callback) {
 }
 
 function finishNote(id, callback) {
-    db.update({_id: id}, {$set: {"finished": true, "finished_on": moment.now()}}, {}, function (err, dbNote) {
-        if (callback) {
-            callback(err, dbNote);
-        }
-    })
+    db.findOne({ _id: id }, function (err, note) {
+        note.finished = note.finished != true;
+        db.update({_id: id}, {$set: {"finished": note.finished, "finished_on": moment.now()}}, {}, function (err, dbNote) {
+            if (callback) {
+                callback(err, dbNote);
+            }
+        });
+    });
 }
 
 function getNoteById(id, callback) {
